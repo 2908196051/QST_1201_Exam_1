@@ -14,8 +14,32 @@ public class QSTLinkList
 			this.value = value;
 		}
 	}
+	//从头到尾
 	private static void printLinkList(Node head) {
+		Node node = head;
+		while(node.next!=null){
+			System.out.print(node.value+"->");
+			node = node.next;
+		} 
 	}
+	
+/*	从尾到头
+ * 
+ * private static void printLinkList(Node head) {
+		 Stack<Node> stack = new Stack<Node>();  
+	        Node node = head;  
+	        int i = 0;  
+	        while(head != null){  
+	            stack.push(head);  
+	            head = head.next;  
+	        }  
+	          
+	        while(!stack.isEmpty()){  
+	            node = stack.pop();  
+	            System.out.print(node.value+"->");  
+	              
+	        }  
+	}*/
   
   public static void main( String[] args ){
     int[] arr = {1,3,5,7,2,4};
