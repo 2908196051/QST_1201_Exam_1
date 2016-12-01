@@ -23,9 +23,10 @@ public class QSTLinkList
 		} 
 	}
 	
-/*	从尾到头
- * 
- * private static void printLinkList(Node head) {
+	
+	//从尾到头
+  
+  private static void printLinkList2(Node head) {
 		 Stack<Node> stack = new Stack<Node>();  
 	        Node node = head;  
 	        int i = 0;  
@@ -39,12 +40,13 @@ public class QSTLinkList
 	            System.out.print(node.value+"->");  
 	              
 	        }  
-	}*/
+	}
   
   public static void main( String[] args ){
     int[] arr = {1,3,5,7,2,4};
     Node head = createLinkList(arr);
     printLinkList(head);
+    printLinkList2(head);
   }
 	private static Node createLinkList(int[] arr) {
 		// TODO Auto-generated method stub
