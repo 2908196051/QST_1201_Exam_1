@@ -1,0 +1,21 @@
+CREATE TABLE IF NOT EXISTS ip_time
+ (ip string comment 'just ip',
+time string comment 'just time'
+) COMMENT 'my test db' 
+row format delimited
+FIELDS TERMINATED BY '\t'
+STORED AS textfile ;
+
+LOAD DATA INPATH '/user/hadoop/mapred_dev_double/ip_time' INTO TABLE ip_time;
+
+CREATE TABLE IF NOT EXISTS ip_time2
+ (ip string comment 'just ip',
+time string comment 'just time'
+) COMMENT 'my test db' 
+row format delimited
+FIELDS TERMINATED BY '\t'
+STORED AS textfile ;
+
+LOAD DATA INPATH '/user/hadoop/mapred_dev_double/ip_time2' INTO TABLE ip_time2;
+
+select ip_time.ip count(distinct ip) from ip_time join ip_time2 where ip on ip_time2;
